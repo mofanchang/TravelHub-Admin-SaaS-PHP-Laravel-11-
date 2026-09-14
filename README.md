@@ -196,4 +196,3 @@ php artisan test
 
 此 Laravel 後台與 Django C端平台（`TRAVELTRIP_PROJECT`）連接同一個 `traveltrip_db` 資料庫，後台新增修改的行程與訂單狀態會即時反映於 C端網站與 RAG 推薦系統中。兩邊的使用者系統完全獨立：這個後台的 `User`/`Membership` 是後台員工帳號，Django 那邊的 `accounts_customuser` 是消費者帳號，兩者不共用密碼或登入機制，只有 `Trip`、`Booking` 這兩張業務資料表是真正共用的。
 
-[返回主專案 C端 README](../README.md)
