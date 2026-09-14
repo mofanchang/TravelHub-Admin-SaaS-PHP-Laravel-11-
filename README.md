@@ -18,14 +18,32 @@ PHP 8.3 / Laravel 11 / PostgreSQL
 ## Architecture
 
 [架構圖]
+## Architecture
 
-Laravel
-├── Controllers
-├── Middleware
-├── Services
-├── Models
-└── PostgreSQL
+```mermaid
+flowchart LR
+    Client[Admin User]
 
+    subgraph Laravel["Laravel 11 Admin Backend"]
+        API[REST API]
+        MW[Middleware<br/>JWT / RBAC / Tenant Isolation]
+        Service[Service Layer]
+        Model[Eloquent Models]
+    end
+
+    subgraph Django["Django C-End Platform"]
+        Web[Django Application]
+    end
+
+    DB[(PostgreSQL<br/>traveltrip_db)]
+
+    Client --> API
+    API --> MW
+    MW --> Service
+    Service --> Model
+    Model --> DB
+
+    Web --> DB
 ## API
 
 ### Authentication
