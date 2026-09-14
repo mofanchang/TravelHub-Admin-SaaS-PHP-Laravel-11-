@@ -44,6 +44,12 @@ flowchart LR
     Model --> DB
 
     Web --> DB
+```
+
+## API
+
+### Authentication
+
 ## API
 
 ### Authentication
